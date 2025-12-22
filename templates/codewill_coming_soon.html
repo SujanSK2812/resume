@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWill - Coming Soon</title>
+    <style>
+        :root {
+            --color-white: #fff;
+            --color-black: #000;
+            --color-primary: #21808d;
+            --color-primary-hover: #1d7480;
+            --color-background: #fdfdfd;
+            --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --space-16: 16px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --radius-base: 12px;
+            --duration-normal: 250ms;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family-base);
+            background: var(--color-background);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: var(--color-black);
+        }
+
+        .coming-soon-card {
+            background: var(--color-white);
+            padding: var(--space-32);
+            border-radius: var(--radius-base);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-16);
+            color: var(--color-primary);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-24);
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--space-16) var(--space-32);
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: var(--radius-base);
+            color: var(--color-white);
+            background: var(--color-primary);
+            text-decoration: none;
+            transition: background var(--duration-normal);
+        }
+
+        .btn:hover {
+            background: var(--color-primary-hover);
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-soon-card">
+        <h1>CodeWill</h1>
+        <p>Our project <strong>CodeWill</strong> is already developed but the code is not yet available on GitHub. It will be shared soon, so stay tuned for updates!</p>
+        <a href="{% url 'home' %}" class="btn">Notify Me</a>
+    </div>
+</body>
+
+
+</html>

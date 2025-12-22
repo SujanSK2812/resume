@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Sujan's - Portfolio</title>
     <style>
         :root {
             --color-white: rgba(255, 255, 255, 1);
@@ -945,13 +945,12 @@
                         <span class="tag">{{ component }}</span>
                     {% endfor %}
                 </div>
-                <div>
-                    <video width="100%" controls>
-                            <source src="{{ project.video.url }}" type="video/mp4">
-                            Your browser does not support the video tag.
-                    </video>
-                </div>
-                
+                <video width="100%" controls>
+    <source src="{% static 'videos/Screen_Recording_2025-12-21_at_10.07.20AM.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+
             </div>
         </div>
         {% endfor %}

@@ -6,6 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sujan's - Portfolio</title>
+    <link href="https://unpkg.com/cloudinary-video-player@2.1.6/dist/cld-video-player.min.css" rel="stylesheet">
+<script src="https://unpkg.com/cloudinary-core@2.13.1/cloudinary-core-shrinkwrap.min.js"></script>
+<script src="https://unpkg.com/cloudinary-video-player@2.1.6/dist/cld-video-player.min.js"></script>
+
     <style>
         :root {
             --color-white: rgba(255, 255, 255, 1);
@@ -945,8 +949,10 @@
                         <span class="tag">{{ component }}</span>
                     {% endfor %}
                 </div>
-                <video width="100%" controls>
-    <source src="{% static 'videos/Screen_Recording_2025-12-21_at_10.07.20AM.mp4' %}" type="video/mp4">
+                <video id="player"
+  class="cld-video-player cld-fluid" width="100%" controls>
+    <source src="https://res.cloudinary.com/dnqlduwly/video/upload/ecommerce_xnze8d.mp4
+" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
@@ -1131,6 +1137,12 @@
         submitBtn.innerText = "Send Message";
     });
 });
+const player = cloudinary.videoPlayer('player', {
+    cloudName: 'dnqlduwly',
+    publicId: 'ecommerce_xnze8d',
+    controls: true,
+    autoplay: false
+  });
     </script>
 </body>
 </html>

@@ -15,7 +15,11 @@ class Project(models.Model):
     description = models.TextField()
     components = models.CharField(max_length=300, help_text="Comma-separated technologies")
     image = models.ImageField(upload_to='projects/images/', blank=True, null=True)
-    video = models.FileField(upload_to=video_upload_path, blank=True, null=True)
+    video_url = models.URLField(
+        blank=True,
+        null=True,
+        help_text="Paste YouTube / MP4 / hosted video link"
+    )
     github_link = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

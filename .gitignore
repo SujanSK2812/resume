@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+
+# Large static videos
+static/videos/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+

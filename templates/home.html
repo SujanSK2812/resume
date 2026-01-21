@@ -935,68 +935,47 @@
         </section>
 <section id="projects" class="scroll-animate">
     <h2>Projects</h2>
-    <div class="projects-grid">
-        {% for project in projects %}
-        <div class="project-card">
-            
-            <!-- Project Image -->
-           
-            
-            <div class="project-content">
-                <h3 class="project-title">{{ project.title }}</h3>
-                <p class="project-description">{{ project.description }}</p>
+    <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Ecommerce-website</h3>
+                        
+                    </div>
+                    <p class="timeline-description">This e-commerce website is a full-stack web application built using Django, Python, HTML, CSS, and JavaScript. It provides a complete online shopping experience with a strong focus on security, usability, and performance.
 
-                <!-- Project Tags / Technologies -->
-                <div class="project-tags">
-                    {% for component in project.components_list %}
-                        <span class="tag">{{ component }}</span>
-                    {% endfor %}
+The system includes a secure admin panel for managing products, categories, users, and orders. Users can browse products, add items to the shopping cart, and place orders through a smooth checkout process. A user dashboard allows customers to view their profile, order history, and manage their account easily.
+
+The website also features a password reset system with email notifications, ensuring secure account recovery and better user trust. Authentication and authorization are handled using Django’s built-in security mechanisms, making the platform safe and reliable.</p>
                 </div>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Attendance Calculator System Management</h3>
+                        
+                    </div>
+                    <p class="timeline-description">This Attendance Calculator System Management is a full-stack web application developed using Django, Python, HTML, CSS, and JavaScript. It is designed to help users manage and track attendance efficiently in a simple and secure way.
 
-                <!-- Project Video -->
-                {% if project.video_file %}
-    <!-- Uploaded video -->
-    <video controls width="100%" class="project-video">
-        <source src="{{ project.video_file.url }}" type="video/mp4">
-    </video>
+The system includes secure user authentication with email-based OTP login and password protection. Users can add and manage subjects, record daily attendance, and view detailed attendance reports. A personal dashboard shows subject-wise attendance percentages, total classes, and present days in a clear and organized format.</p>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Crowdfunding Portal System Management</h3>
+                        
+                    </div>
+                    <p class="timeline-description">A Crowdfunding Portal System Management is a web-based platform that manages the complete process of raising funds from the public for projects, startups, social causes, or personal needs.
 
-{% elif project.video_url %}
+It allows three main roles:
 
-    <!-- YOUTUBE -->
-    {% if "youtube.com" in project.video_url or "youtu.be" in project.video_url %}
-        <iframe
-            width="100%"
-            height="315"
-            src="https://www.youtube.com/embed/{{ project.video_url|cut:'https://youtu.be/'|cut:'https://www.youtube.com/watch?v=' }}"
-            frameborder="0"
-            allowfullscreen>
-        </iframe>
+Admin
 
-    <!-- CLOUDINARY EMBED -->
-    {% elif "player.cloudinary.com" in project.video_url %}
-        <iframe
-            src="{{ project.video_url }}"
-            width="100%"
-            height="450"
-            frameborder="0"
-            allow="autoplay; fullscreen; encrypted-media"
-            allowfullscreen>
-        </iframe>
+Campaign Creators
 
-    <!-- DIRECT MP4 LINK -->
-    {% else %}
-        <video controls width="100%" class="project-video">
-            <source src="{{ project.video_url }}">
-        </video>
-    {% endif %}
+Donors
 
-{% endif %}
+Its main purpose is to connect people who need funds with people willing to contribute.</p>
+                </div>
 
                 
             </div>
-        </div>
-        {% endfor %}
-    </div>
 </section>
 
 
@@ -1047,7 +1026,7 @@
                     <div class="timeline-header">
                         <h3 class="timeline-title">Online Certifications</h3>
                         <h4 class="timeline-subtitle">Various Platforms</h4>
-                        <p class="timeline-meta">2023 - Present</p>
+                        
                     </div>
                     <p class="timeline-description">Hacker Rank,My SQL(Udemy), Django for Professionals (Rathan.com),
                          AI for techies,Python(Engineering in Kannada),Excel (Lets Upgrade), Java Programming (Great Learning) &  also have many other Certifications</p>
@@ -1056,32 +1035,15 @@
         </section>
 
         <section id="contact" class="scroll-animate">
-            <h2>Get In Touch</h2>
-            <div class="contact-form">
-                <div class="success-message" id="success-message">
-                    Thank you for your message! I'll get back to you soon.
+            <h2>Contact Details</h2>
+            <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title"> PHONE : +91 9148937633</h3>
+                        <h4 class="timeline-subtitle">GMAIL: sujanshettySK28@gmail.com</h4>
+                        
+                    </div>
+
                 </div>
-                <form id="contact-form" action="{% url 'contact_email' %}" method="post">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="name" style="padding-left: 8px;">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" style="padding-left: 8px;">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" style="padding-left: 8px;">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" style="padding-left: 8px;">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
         </section>
     </div>
 
